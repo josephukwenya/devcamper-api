@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
-const colors = require("colors");
+require("colors");
 const errorHandler = require("./middleware/error");
 const connectDB = require("./config/db");
 
@@ -30,7 +30,7 @@ app.use("/api/v1/bootcamps", bootcamps);
 // Custom Error Handler
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 5000;
 
 app.get("/", (req, res) => {
   res.status(200).json({ success: true, data: { id: 1 } });
